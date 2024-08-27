@@ -1,0 +1,61 @@
+---
+// import { getCollection } from "astro:content";
+import config from "@/data/config";
+import PagesLayout from "@/layouts/PagesLayout.astro";
+import Hero from "@/components/Hero.astro";
+import CardsContainer from "@/components/shared/CardsContainer.astro";
+import PlanCard from "@/components/shared/PlanCard.astro";
+import SectionHeading from "@/components/shared/SectionHeading.astro";
+import Button from "@/components/shared/Button.astro";
+import Carousel from "@/components/shared/Carousel.astro";
+---
+
+<PagesLayout
+  title="Muller And Kong Travel - Inicio"
+  description="Tours y excursiones en la región de Coquimbo"
+  image="/screenshot.png"
+>
+  <Hero />
+
+  <SectionHeading
+    title="Tours en la región de Coquimbo"
+    description="Ven a conocer nuestras acitividades en termas, ríos, montaña, parques temáticos con nuestro equipo que está preparado para guiarte."
+  />
+  <div class="Container">
+    <CardsContainer>
+      {
+        config.plans.slice(0, 3).map((plan, index) => (
+          <PlanCard
+            price={plan.price}
+            title={plan.name}
+            description={plan.description}
+            classes="Yellow"
+            tag={plan.tag}
+            features={plan.features}
+          >
+            {
+              <a href={`/plans/${plan.slug}`} class="Button Button-sm Orange">
+                Lo quiero!
+              </a>
+            }
+            <a href="/contact" class="Button Button-sm Orange">
+              Lo quiero!
+            </a>
+          </PlanCard>
+        ))
+      }
+    </CardsContainer>
+    <SectionHeading title="Conoce algunos de nuestros proyectos" />
+    <Carousel />
+    <SectionHeading
+      title="¿Buscas más opciones de planes?"
+      description="Conoce todos nuestros planes"
+    >
+      <Button
+        text="Ver todos los planes"
+        url="/plans"
+        classes="Button Button-l Orange"
+      />
+    </SectionHeading>
+  </div>
+</PagesLayout>
