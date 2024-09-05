@@ -3,81 +3,79 @@ import Button from "./shared/Button.astro";
 ---
 
 <section class="Hero">
-  <div class="Container">
-    <h1 class="Hero-title shadow-titles">Tours en la Región de Coquimbo</h1>
-    <p class="Hero-description">
-      Ven a conocer el Valle Del Elqui, las Termas de Ovalle, montañas y ríos
-      con nosotros.
-    </p>
-    <div class="Hero-actions">
-      <Button
-        text="Ver todos los tours"
-        url="/plans"
-        classes="Button Button-md Green"
-      />
-      <Button
-        text="Contáctanos"
-        url="/contact"
-        classes="Button Button-md Orange"
-      />
-    </div>
-  </div>
+	<div class="Container">
+		<div class="Hero-Container">
+			<h1 class="Hero-Title shadow-titles">Tours en la Región de Coquimbo</h1>
+			<p class="Hero-Description">
+				Ven a conocer el Valle Del Elqui, las Termas de Ovalle, montañas y ríos
+				con nosotros.
+			</p>
+			<div class="Hero-Actions">
+				<Button
+					text="Ver todos los tours"
+					url="/tours"
+					classes="Button ButtonDefault"
+				/>
+				<Button
+					text="Contáctanos"
+					url="/contact"
+					classes="Button ButtonSecondary"
+				/>
+			</div>
+		</div>
+	</div>
 </section>
 
 <style lang="scss">
-  .Hero {
-    background-image: linear-gradient(
-        rgba(6, 8, 85, 0.726),
-        rgba(0, 0, 0, 0.719)
-      ),
-      url(/src/assets/site-images/FaroLaSerena-mobile.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: local;
-    height: 60vh;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    justify-content: center;
-    gap: 1em;
-    padding: 1em 0;
-    color: var(--ui-white);
+	.Hero {
+		background-image: linear-gradient(
+				rgba(47, 11, 61, 0.301),
+				rgba(39, 18, 88, 0.767)
+			),
+			url(/src/assets/hero/hero-1.jpeg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: local;
+		background-attachment: fixed;
+		aspect-ratio: 16/6;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+	}
 
-    &-actions {
-      display: flex;
-      gap: 1em;
-      padding: 0.5em 0;
+	.Hero-Container {
+		display: flex;
+		flex-flow: column;
+		justify-content: first baseline;
+	}
 
-      @media (max-width: 480px) {
-        flex-flow: column nowrap;
-      }
-    }
-    &-title {
-      text-transform: normal;
-      color: var(--ui-white);
-      font-size: 5rem;
-      line-height: 1.2;
-      margin: 0;
-      font-weight: 800;
-    }
+	.Hero-Title {
+		font-size: 3.5rem;
+		line-height: 1;
+		font-weight: 900;
+		margin: 0;
+		color: var(--ui-white);
+	}
 
-    @media (max-width: 768px) {
-      background-image: linear-gradient(
-          rgba(33, 11, 94, 0.596),
-          rgb(14, 13, 15)
-        ),
-        url(/src/assets/site-images/FaroLaSerena-mobile.webp);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: local;
-      height: unset;
+	.Hero-Description {
+		font-size: 1.2rem;
+		font-weight: 600;
+		line-height: 1.2;
+		margin: 1rem 0;
+		color: var(--ui-white);
+	}
 
-      &-title {
-        font-size: 2rem;
-        line-height: 1.3;
-      }
-    }
-  }
+	.Hero-Actions {
+		display: flex;
+		justify-content: start;
+		gap: 2rem;
+	}
+
+	@media (max-width: 768px) {
+		.Hero-Title {
+			font-size: 2rem;
+			line-height: 1.3;
+		}
+	}
 </style>

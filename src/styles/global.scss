@@ -1,54 +1,72 @@
-@import "normalize.css";
+@use "normalize.css";
+@use './spacing';
 
 :root {
-  --ui-accent: #ff8640;
-  --ui-dark-green: #189e5f;
-  --ui-dark-background: #535353;
-  --ui-light-background: #e4e4e4;
-  --ui-black: #1d1d1d;
-  --ui-white: #f3f3f3;
-  --ui-light-orange: #ff9f68;
+  // Typography
   --ui-typography: "Montserrat Variable", sans-serif;
-  --ui-yellow: #fff780;
-  --ui-green: #7adc8f;
-  --ui-light-purple: #a688ff;
-  --ui-dark-purple: #6145b6;
-  --ui-blue: #1b3be5;
-  --ui-light-blue: #7b90fc;
-  --padding-sm: 0.5em;
-  --padding-md: 1em;
-  --padding-l: 1.5em;
-  --padding-xl: 2em;
-  --shadow-titles: 3px 3px 3px rgba(0, 0, 0, 0.2);
-  color-scheme: dark light;
-}
 
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: var(--ui-light-background);
-    color: var(--ui-black);
-  }
+  // Shadows
+  --shadow-titles: 0.1875rem 0.1875rem 0.1875rem rgba(0, 0, 0, 0.2);
 
-  a {
-    color: var(--ui-dark-purple);
-    font-weight: 500;
-  }
+  // Background colors
+  --light-surface: #cfaf97;
+  --dark-surface: #352b4b;
 
-  a:hover {
-    color: var(--ui-accent);
-  }
+  // Basic colors
+  --ui-black: #222222;
+  --ui-white: #eeeeee;
+  // Corporative colors
+  --amber-300: #e5ad4a;
+  --amber-200: #fde68a;
+  --yellow-700: #b88056;
+  --teal-600: #00758d;
+  --teal-400: #2dd4bf;
+  --teal-200: #a7f3d0;
+  --gray-200: #e4e4e4;
+  --gray-400: #bbbbbb;
+  --gray-600: #4b5563;
+  --gray-800: #1f2937;
+  --red-700: #db0a35;
+  --red-500: #ef4444;
+  --red-300: #fca5a5;
+
+  // Tokens
+  --primary-color: var(--teal-600);
+  --secondary-color: var(--amber-300);
+  --accent-color: var(--red-500);
+  --success-color: var(--teal-400);
+  --warning-color: var(--red-700);
+  --info-color: var(--amber-200);
+
+  //Most specific elements
+  --info-card-light-color: var(--ui-light-background);
+  --header-color: var(--accent-color);
+  --cards-in-light-background: var(--gray-200);
+  --light-theme-background: var(--light-surface);
+  --dark-theme-background: var(--dark-surface);
+
+  color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: var(--ui-dark-background);
+    background-color: var(--dark-theme-background);
     color: var(--ui-white);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--light-theme-background);
+    color: var(--ui-black);
   }
 }
 
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-size: var(--base-size);
+  /* 16px */
 }
 
 *,
@@ -57,39 +75,6 @@ html {
   box-sizing: inherit;
   margin: 0;
   transition: all ease-in-out 0.2s;
-}
-
-body {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  font-size: 17px;
-  line-height: 1.6;
-  font-family: var(--ui-typography);
-  display: flex;
-  flex-flow: column nowrap;
-  min-height: 100vh;
-  padding-top: 70px;
-}
-
-main {
-  flex: 1;
-  padding-bottom: 3em;
-}
-
-.Container {
-  display: inherit;
-  width: 100%;
-  max-width: 1024px;
-  margin: 0 auto;
-  flex: inherit;
-  flex-flow: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  padding: 0 1em;
-  gap: inherit;
-  grid-auto-rows: inherit;
-  grid-template-columns: inherit;
-  grid-auto-flow: inherit;
 }
 
 strong,
@@ -102,108 +87,87 @@ img {
   height: auto;
 }
 
-.DarkGreen {
-  background-color: var(--ui-dark-green);
+h1,
+h2,
+h3 {
+  margin: var(--size-10) 0 var(--size-1);
+  /* 40px 0 8px */
 }
 
-.Green {
-  background-color: var(--ui-green);
-}
-
-.Yellow {
-  background-color: var(--ui-yellow);
-}
-
-.Blue {
-  background-color: var(--ui-blue);
-}
-
-.LightBlue {
-  background-color: var(--ui-light-blue);
-}
-
-.Purple {
-  background-color: var(--ui-light-purple);
-}
-
-.Orange {
-  background-color: var(--ui-accent);
-}
-
-.LightOrange {
-  background-color: var(--ui-light-orange);
-}
-
-.Tag {
-  background-color: var(--ui-accent);
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 0.2em 0.7em;
-  border-radius: 25px;
-  border: solid 1px var(--ui-black);
+body {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: 1rem;
+  /* 16px */
+  line-height: 1.6;
+  font-family: var(--ui-typography);
   display: flex;
-  flex-flow: column;
-  justify-content: center;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  padding-top: 85px;
+  /* 40px */
 }
 
-.shadow-titles {
-  text-shadow: var(--shadow-titles);
+main {
+  flex: 1;
+  padding-bottom: var(--size-12);
+  /* 48px */
 }
 
+.Container {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+
+// Buttons 
 .Button {
-  border: solid 2px var(--ui-black);
-  border-radius: 2em;
-  text-transform: uppercase;
+  display: flex;
+  border-radius: var(--border-radius-xl);
+  padding-inline: var(--padding-lg);
+  padding-block: var(--padding-sm);
   text-decoration: none;
-  color: var(--ui-black);
-  font-weight: 500;
+  justify-content: center;
+  font-weight: 600;
+  border: solid 2px rgba(255, 2555, 255, 0);
 
   &:hover {
     background-color: var(--ui-black);
+  }
+
+  &:active {
+    border: solid 2px var(--red-700);
+  }
+}
+
+.ButtonDefault {
+  background-color: var(--secondary-color);
+  color: var(--ui-black);
+
+  &:hover {
     color: var(--ui-white);
   }
 }
 
-.PageImage {
-  margin: 0 0 1.5em;
-  aspect-ratio: 5/2;
-  object-fit: cover;
+.ButtonSecondary {
+  background-color: var(--accent-color);
+  color: var(--ui-white);
 }
 
-.Button-sm {
-  padding: 0.9em 1em;
-  font-size: 0.7rem;
-  font-weight: 700;
-}
+@media (max-width: 48rem) {
 
-.Button-md {
-  padding: 1.1em 1.2em;
-  font-size: 0.9rem;
-}
-
-.Button-l {
-  padding: 1.3em 2em;
-  font-size: 1.1rem;
-}
-
-h1,
-h2,
-h3 {
-  margin: 2.5rem 0 0.5rem;
-}
-
-@media (max-width: 768px) {
+  /* 768px */
   body {
-    font-size: 16px;
+    font-size: 0.9375rem;
+    /* 15px */
   }
 
-  .Container {
-    padding: 1em;
-  }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 25rem) {
+
+  /* 400px */
   h2 {
     font-size: 1.2rem;
     line-height: 1.3;

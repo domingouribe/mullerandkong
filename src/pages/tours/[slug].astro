@@ -15,15 +15,15 @@ if (!plan) {
 }
 ---
 
-<PagesLayout
-	image="/screenshot.png"
-	title="un titulo"
-	description="Una descripcion aqui">
+
+
+<PagesLayout title="titulo" description="descripcion" image="/screenshot.png">
 	<div class="Container">
 		<div class="PlanDetail">
 			<h1 class="PlanDetail-title">{plan.name}</h1>
 			<div class="PlanDetail-description">
 				<p>{plan.content}</p>
+				<!-- <p>{plan.description}</p> -->
 			</div>
 
 			<div class="PlanDetail-picture">
@@ -36,14 +36,3 @@ if (!plan) {
 		</div>
 	</div>
 </PagesLayout>
-<style lang="scss">
-	.PlanDetail {
-		max-width: 500px;
-
-		&-picture img {
-			width: 100%;
-			height: auto;
-			margin: auto;
-		}
-	}
-</style>

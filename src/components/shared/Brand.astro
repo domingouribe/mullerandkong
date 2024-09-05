@@ -4,7 +4,7 @@ const { siteInfo } = data;
 ---
 
 <a href="/" class="Brand">
-	{siteInfo.name}
+	<img src={siteInfo.logoUrl} alt={siteInfo.name} />
 </a>
 
 <style lang="scss">
@@ -13,6 +13,10 @@ const { siteInfo } = data;
 		font-size: 2rem;
 		color: var(--ui-white);
 		text-decoration: none;
+
+		img {
+			max-width: 85px;
+		}
 
 		@media screen and (max-width: 480px) {
 			font-size: 1.2rem;

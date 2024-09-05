@@ -1,23 +1,18 @@
 ---
-// import { getCollection } from "astro:content";
 import config from "@/data/config";
 import PagesLayout from "@/layouts/PagesLayout.astro";
-import Hero from "@/components/Hero.astro";
-import CardsContainer from "@/components/shared/CardsContainer.astro";
 import PlanCard from "@/components/shared/PlanCard.astro";
+import CardsContainer from "@/components/shared/CardsContainer.astro";
 import SectionHeading from "@/components/shared/SectionHeading.astro";
-import Button from "@/components/shared/Button.astro";
 ---
 
 <PagesLayout
 	title="Muller And Kong Travel - Inicio"
 	description="Tours y excursiones en la región de Coquimbo"
 	image="/screenshot.png">
-	<Hero />
-
 	<SectionHeading
-		title="Tours en la región de Coquimbo"
-		description="Ven a conocer nuestras acitividades en termas, ríos, montaña, parques temáticos con nuestro equipo que está preparado para guiarte."
+		title="Conoce todos nuestros tours"
+		description="Si buscas montaña, ver ballenas, caminar por la rivera de un río..."
 	/>
 	<div class="Container">
 		<CardsContainer>
@@ -41,15 +36,5 @@ import Button from "@/components/shared/Button.astro";
 				))
 			}
 		</CardsContainer>
-
-		<SectionHeading
-			title="¡Ven a conocer todos nuestros tourss!"
-			description="Conoce todos nuestros tours en la región de Coquimbo">
-			<Button
-				text="Ver todos los planes"
-				url="/plans"
-				classes="Button ButtonSecondary"
-			/>
-		</SectionHeading>
 	</div>
 </PagesLayout>

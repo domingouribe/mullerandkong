@@ -3,9 +3,10 @@ import { v4 as uuidv4 } from "uuid";
 const siteInfo = {
   name: "Muller And Kong Travel",
   description: "Tour en la Región de Coquimbo",
-  logoUrl: "/assets/logo.png",
+  logoUrl: "src/assets/logo.png",
   contact: {
     email: "hola@mullerandkong.com",
+    telephone: '+56 9 7389 7560',
     social: {
       twitter: "https://twitter.com/mullerandkong",
       facebook: "https://facebook.com/mullerandkong",
@@ -16,124 +17,90 @@ const siteInfo = {
 
 const plans = [
   {
-    slug: "plan-basico",
-    name: "Emprende",
+    slug: "tour-barraza-termas-socos",
+    name: "Tour Barraza y Termas Socos",
     description:
-      "Anuncia tu negocio en Internet y obtén más contactos de nuevos clientes",
+      "POBLADO BARRAZA y SALALA: Tierra de changos, testigo de la historia de la conformación de Chile como país, donde su iglesia parroquial, diseñada por Joaquín Toesca, Monumento Nacional chileno, construida originalmente en el año 1681. Salala Lugar histórico, por enfrentamiento el 11 de febrero de 1817, en penúltimo combate por la Independencia de Chile, que significó inicio de la liberación de la región. 15 de febrero de 1817 las fuerzas patriotas entran triunfantes a La Serena. TERMAS DEL SOCOS: Lugar que invita a la relajación y autocuidado del bienestar y la salud, sus aguas cuentan con varios nutrientes minerales de altas propiedades curativas tales como sodio, yodo, bromo y magnesio.Disfrute de nuestra agua mineral termal, regalo de la naturaleza que brota desde lo profundo de la tierra y ha sido declarada fuente de salud.",
     content:
       "Ideal para negocios que recién comienzan. Incluye una página de inicio con información básica y un formulario de contacto.",
-    featureImage: "/src/assets/plans-images/plan-basico.jpg",
+    featureImage: "/src/assets/tours-images/termas-socos-1.jpg",
     imageCreadits:
-      'Foto de <a href="https://unsplash.com/es/@jdiegoph?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Diego PH</a> en <a href="https://unsplash.com/es/fotos/person-holding-light-bulb-fIq0tET6llw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
+      'Müller And Kong Team',
     features: [
-      "1 página web",
-      "Diseño responsivo",
-      "Formulario de contacto",
-      "Enlaces a Redes Sociales",
-      "Descripción de servicios y productos, con una foto",
-      "Optimización básica para motores de búsqueda (SEO)",
-      "Ubicación en Google Maps",
-      "Soporte por email durante 3 meses",
-      "Webhosting básico gratis por primer año",
+      "Tickets",
+      "Snack",
+      "Almuerzo",
+      "Kit Protección solar",
     ],
     price: 85000,
+    horarioSalida: "08:00 hrs",
+    horarioRegreso: "18:00 hrs",
+    tag: "Senderismo",
   },
   {
-    slug: "plan-catalogo",
-    name: "Catálogo",
+    slug: "tour-barraza-termas-socos",
+    name: "Tour Barraza y Termas Socos",
     description:
-      "El Catálogo Online te permite mostrar no solo tus servicios, sino tus productos con sus respectivos precios y detalles de cada uno",
+      "POBLADO BARRAZA y SALALA: Tierra de changos, testigo de la historia de la conformación de Chile como país, donde su iglesia parroquial, diseñada por Joaquín Toesca, Monumento Nacional chileno, construida originalmente en el año 1681. Salala Lugar histórico, por enfrentamiento el 11 de febrero de 1817, en penúltimo combate por la Independencia de Chile, que significó inicio de la liberación de la región. 15 de febrero de 1817 las fuerzas patriotas entran triunfantes a La Serena. TERMAS DEL SOCOS: Lugar que invita a la relajación y autocuidado del bienestar y la salud, sus aguas cuentan con varios nutrientes minerales de altas propiedades curativas tales como sodio, yodo, bromo y magnesio.Disfrute de nuestra agua mineral termal, regalo de la naturaleza que brota desde lo profundo de la tierra y ha sido declarada fuente de salud.",
     content:
-      "Perfecto para negocios que necesitan mostrar una gama de productos o servicios con detalles y precios.",
-    featureImage: "/src/assets/plans-images/plan-basico.jpg",
+      "Ideal para negocios que recién comienzan. Incluye una página de inicio con información básica y un formulario de contacto.",
+    featureImage: "/src/assets/tours-images/termas-socos-1.jpg",
     imageCreadits:
-      'Foto de <a href="https://unsplash.com/es/@jdiegoph?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Diego PH</a> en <a href="https://unsplash.com/es/fotos/person-holding-light-bulb-fIq0tET6llw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
+      'Müller And Kong Team',
     features: [
-      "Hasta 3 páginas internas",
-      "Diseño responsivo",
-      "Sección de catálogo de productos/servicios",
-      "Formulario de contacto",
-      "Ubicación en Google Maps",
-      "Enlaces a Redes Sociales",
-      "Optimización básica para motores de búsqueda (SEO)",
-      "Soporte por email durante 3 meses",
-      "Webhosting básico gratis por primer año",
+      "Tickets",
+      "Snack",
+      "Almuerzo",
+      "Kit Protección solar",
     ],
-    price: 155000,
-    tag: "Recomendado",
+    price: 85000,
+    horarioSalida: "08:00 hrs",
+    horarioRegreso: "18:00 hrs",
+    tag: "Senderismo",
   },
   {
-    slug: "plan-profesional",
-    name: "Profesional",
+    slug: "tour-barraza-termas-socos",
+    name: "Tour Barraza y Termas Socos",
     description:
-      "Especialmente diseñado para mostrar tus servicios profesionales en diversas áreas",
+      "POBLADO BARRAZA y SALALA: Tierra de changos, testigo de la historia de la conformación de Chile como país, donde su iglesia parroquial, diseñada por Joaquín Toesca, Monumento Nacional chileno, construida originalmente en el año 1681. Salala Lugar histórico, por enfrentamiento el 11 de febrero de 1817, en penúltimo combate por la Independencia de Chile, que significó inicio de la liberación de la región. 15 de febrero de 1817 las fuerzas patriotas entran triunfantes a La Serena. TERMAS DEL SOCOS: Lugar que invita a la relajación y autocuidado del bienestar y la salud, sus aguas cuentan con varios nutrientes minerales de altas propiedades curativas tales como sodio, yodo, bromo y magnesio.Disfrute de nuestra agua mineral termal, regalo de la naturaleza que brota desde lo profundo de la tierra y ha sido declarada fuente de salud.",
     content:
-      "Adecuado para profesionales que necesitan una presencia online sólida y detallada.",
-    featureImage: "/src/assets/plans-images/plan-basico.jpg",
+      "Ideal para negocios que recién comienzan. Incluye una página de inicio con información básica y un formulario de contacto.",
+    featureImage: "/src/assets/tours-images/termas-socos-1.jpg",
     imageCreadits:
-      'Foto de <a href="https://unsplash.com/es/@jdiegoph?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Diego PH</a> en <a href="https://unsplash.com/es/fotos/person-holding-light-bulb-fIq0tET6llw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
+      'Müller And Kong Team',
     features: [
-      "Hasta 6 páginas internas",
-      "Diseño responsivo",
-      "Sección de servicios detallada",
-      "Blog integrado",
-      "Formulario de contacto",
-      "Optimización avanzada para motores de búsqueda (SEO)",
-      "Soporte por email y teléfono durante 6 meses",
-      "Webhosting profesional gratis por primer año",
-      "1 cuenta de correo corporativo gratis",
+      "Tickets",
+      "Snack",
+      "Almuerzo",
+      "Kit Protección solar",
     ],
-    price: 260000,
+    price: 85000,
+    horarioSalida: "08:00 hrs",
+    horarioRegreso: "18:00 hrs",
+    tag: "Senderismo",
   },
   {
-    slug: "plan-propiedades",
-    name: "Propiedades",
+    slug: "tour-barraza-termas-socos",
+    name: "Tour Barraza y Termas Socos",
     description:
-      "Diseñado especialmente para corredores de propiedades y agentes inmobiliarios",
+      "POBLADO BARRAZA y SALALA: Tierra de changos, testigo de la historia de la conformación de Chile como país, donde su iglesia parroquial, diseñada por Joaquín Toesca, Monumento Nacional chileno, construida originalmente en el año 1681. Salala Lugar histórico, por enfrentamiento el 11 de febrero de 1817, en penúltimo combate por la Independencia de Chile, que significó inicio de la liberación de la región. 15 de febrero de 1817 las fuerzas patriotas entran triunfantes a La Serena. TERMAS DEL SOCOS: Lugar que invita a la relajación y autocuidado del bienestar y la salud, sus aguas cuentan con varios nutrientes minerales de altas propiedades curativas tales como sodio, yodo, bromo y magnesio.Disfrute de nuestra agua mineral termal, regalo de la naturaleza que brota desde lo profundo de la tierra y ha sido declarada fuente de salud.",
     content:
-      "Ideal para agentes inmobiliarios que necesitan mostrar propiedades con detalles, imágenes y mapas.",
-    featureImage: "/src/assets/plans-images/plan-basico.jpg",
+      "Ideal para negocios que recién comienzan. Incluye una página de inicio con información básica y un formulario de contacto.",
+    featureImage: "/src/assets/tours-images/termas-socos-1.jpg",
     imageCreadits:
-      'Foto de <a href="https://unsplash.com/es/@jdiegoph?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Diego PH</a> en <a href="https://unsplash.com/es/fotos/person-holding-light-bulb-fIq0tET6llw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
+      'Müller And Kong Team',
     features: [
-      "Hasta 6 páginas internas",
-      "Diseño responsivo",
-      "Sección de propiedades con filtros de búsqueda",
-      "Blog integrado",
-      "Integración con Google Maps",
-      "Formulario de contacto y de solicitud de visita",
-      "Optimización avanzada para motores de búsqueda (SEO)",
-      "Soporte prioritario por email y teléfono durante 1 año",
-      "Webhosting profesional gratis por primer año",
-      "2 cuentas de correo corporativo gratis",
+      "Tickets",
+      "Snack",
+      "Almuerzo",
+      "Kit Protección solar",
     ],
-    price: 330000,
+    price: 85000,
+    horarioSalida: "08:00 hrs",
+    horarioRegreso: "18:00 hrs",
+    tag: "Senderismo",
   },
-  {
-    slug: "plan-e-commerce",
-    name: "e-Commerce",
-    description:
-      "El sitio de tu tienda que muestra tus productos y controla tu stock",
-    content:
-      "Perfecto para tiendas que desean vender productos en línea con control de inventario y pasarelas de pago.",
-    featureImage: "/src/assets/plans-images/plan-basico.jpg",
-    imageCreadits:
-      'Foto de <a href="https://unsplash.com/es/@jdiegoph?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Diego PH</a> en <a href="https://unsplash.com/es/fotos/person-holding-light-bulb-fIq0tET6llw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
-    features: [
-      "Páginas ilimitadas",
-      "Diseño responsivo",
-      "Carrito de compras y pago en línea",
-      "Gestión de inventario",
-      "Integración con métodos de pago (PayPal, Stripe, etc.)",
-      "Optimización avanzada para motores de búsqueda (SEO)",
-      "Soporte completo por email, teléfono y chat durante 1 año",
-      "Blog integrado",
-      "Webhosting profesional gratis por primer año",
-      "5 cuentas de correo corporativo gratis",
-    ],
-    price: 980000,
-  },
-  // Añade más planes aquí
+
 ];
 
 const menu = [
@@ -143,8 +110,8 @@ const menu = [
     id: uuidv4(),
   },
   {
-    title: "Planes",
-    url: "/plans",
+    title: "Tours",
+    url: "/tours",
     id: uuidv4(),
   },
   {

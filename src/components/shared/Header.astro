@@ -6,25 +6,29 @@ import Bars from "./Bars.astro";
 
 <header class="Header">
 	<div class="Container">
-		<Brand />
-		<Bars />
-		<NavBar />
+		<div class="Header-Container">
+			<Brand />
+			<Bars />
+			<NavBar />
+		</div>
 	</div>
 </header>
 
 <style lang="scss">
 	.Header {
-		background: var(--ui-black);
+		background: var(--header-color);
 		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-between;
-		align-items: center;
 		position: fixed;
 		top: 0;
 		z-index: 2;
-		width: 100vw;
-		height: 70px;
-		padding: 0;
+		width: 100%;
+		padding: 0.5rem 0;
+
+		&-Container {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			align-items: center;
+		}
 	}
 </style>
