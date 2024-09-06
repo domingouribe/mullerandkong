@@ -9,8 +9,9 @@
   --shadow-titles: 0.1875rem 0.1875rem 0.1875rem rgba(0, 0, 0, 0.2);
 
   // Background colors
-  --light-surface: #cfaf97;
-  --dark-surface: #352b4b;
+  --light-surface: #e7d4c6;
+  --dark-surface: #3d364e;
+  --dark-surface: var(--gray-800);
 
   // Basic colors
   --ui-black: #222222;
@@ -41,6 +42,7 @@
   //Most specific elements
   --info-card-light-color: var(--ui-light-background);
   --header-color: var(--accent-color);
+  --header-color: var(--primary-color);
   --cards-in-light-background: var(--gray-200);
   --light-theme-background: var(--light-surface);
   --dark-theme-background: var(--dark-surface);
@@ -89,8 +91,9 @@ img {
 
 h1,
 h2,
-h3 {
-  margin: var(--size-10) 0 var(--size-1);
+h3,
+h4 {
+  margin: var(--size-3) 0 var(--size-2);
   /* 40px 0 8px */
 }
 
@@ -131,6 +134,7 @@ main {
   justify-content: center;
   font-weight: 600;
   border: solid 2px rgba(255, 2555, 255, 0);
+  width: fit-content;
 
   &:hover {
     background-color: var(--ui-black);
@@ -144,6 +148,7 @@ main {
 .ButtonDefault {
   background-color: var(--secondary-color);
   color: var(--ui-black);
+  border: solid 2px var(--ui-black);
 
   &:hover {
     color: var(--ui-white);

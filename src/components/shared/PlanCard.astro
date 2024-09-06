@@ -29,7 +29,7 @@ const formattedPrice = price.toLocaleString("es-CL");
 <article class:list={["PlanCard", classes]}>
 	<header class="PlanCard-header">
 		<img class="PlanCard-Image" src={thumbnailCard} alt={altThumbnailCard} />
-		{tag && <span class="Tag">{tag}</span>}
+		{tag && <span class="PlanCard-tag">{tag}</span>}
 	</header>
 	<section class="PlanCard-section">
 		<h2 class="PlanCard-title">{title}</h2>
@@ -58,7 +58,7 @@ const formattedPrice = price.toLocaleString("es-CL");
 		gap: 1em;
 		color: var(--ui-black);
 		background-color: var(--cards-in-light-background);
-		box-shadow: 6px 6px 0 4px rgba(0 0 0 / 30%);
+		box-shadow: 8px 8px 0 2px rgba(0 0 0 / 20%);
 
 		&-Image {
 			width: 100%;
@@ -66,6 +66,15 @@ const formattedPrice = price.toLocaleString("es-CL");
 			aspect-ratio: 2/1;
 			background-size: cover;
 			overflow: hidden;
+		}
+
+		&-tag {
+			background-color: var(--yellow-700);
+			display: flex;
+			width: min-content;
+			color: var(--ui-white);
+			font-size: 0.8rem;
+			padding: 2px 8px;
 		}
 
 		&-header {

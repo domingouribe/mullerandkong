@@ -6,13 +6,13 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<section class="SectionHeading">
-	<div class="Container">
+<div class="Container">
+	<section class="SectionHeading">
 		<h2 class="shadow-titles">{title}</h2>
 		{description && <p>{description}</p>}
 		<slot />
-	</div>
-</section>
+	</section>
+</div>
 
 <style lang="scss">
 	.SectionHeading {

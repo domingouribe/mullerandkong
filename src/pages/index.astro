@@ -33,7 +33,7 @@ import Button from "@/components/shared/Button.astro";
 						thumbnailCard={plan.featureImage}
 						altThumbnailCard={plan.name}>
 						{
-							<a href={`/tours/${plan.slug}`} class="Button ButtonSecondary">
+							<a href={`/tours/${plan.slug}`} class="Button ButtonDefault">
 								Lo quiero!
 							</a>
 						}
@@ -47,7 +47,7 @@ import Button from "@/components/shared/Button.astro";
 			description="Conoce todos nuestros tours en la región de Coquimbo">
 			<Button
 				text="Ver todos los planes"
-				url="/plans"
+				url="/tours"
 				classes="Button ButtonSecondary"
 			/>
 		</SectionHeading>
