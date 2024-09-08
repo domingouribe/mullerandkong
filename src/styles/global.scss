@@ -46,6 +46,8 @@
   --cards-in-light-background: var(--gray-200);
   --light-theme-background: var(--light-surface);
   --dark-theme-background: var(--dark-surface);
+  --button-font-size-large: var(--size-6);
+  --button-font-size-small: var(--size-3);
 
   color-scheme: light dark;
 }
@@ -124,41 +126,8 @@ main {
   padding-inline: 1rem;
 }
 
-// Buttons 
-.Button {
-  display: flex;
-  border-radius: var(--border-radius-xl);
-  padding-inline: var(--padding-lg);
-  padding-block: var(--padding-sm);
-  text-decoration: none;
-  justify-content: center;
-  font-weight: 600;
-  border: solid 2px rgba(255, 2555, 255, 0);
-  width: fit-content;
+// Componente base: Botón
 
-  &:hover {
-    background-color: var(--ui-black);
-  }
-
-  &:active {
-    border: solid 2px var(--red-700);
-  }
-}
-
-.ButtonDefault {
-  background-color: var(--secondary-color);
-  color: var(--ui-black);
-  border: solid 2px var(--ui-black);
-
-  &:hover {
-    color: var(--ui-white);
-  }
-}
-
-.ButtonSecondary {
-  background-color: var(--accent-color);
-  color: var(--ui-white);
-}
 
 @media (max-width: 48rem) {
 

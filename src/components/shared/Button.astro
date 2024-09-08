@@ -8,3 +8,62 @@ const { url, text, classes } = Astro.props;
 ---
 
 <a href={url} class:list={["Button", classes]}>{text}</a>
+
+<style lang="scss">
+	.Button {
+		display: flex;
+		justify-content: center;
+		padding: var(--button-padding-normal);
+		font-size: var(--button-font-size-normal);
+		border-radius: var(--border-radius-xl);
+		text-decoration: none;
+		transition: all 0.2s ease;
+		background-color: var(--secondary-color);
+		color: var(--ui-black);
+		border: solid 2px transparent;
+		font-weight: 600;
+		width: fit-content;
+
+		&--large {
+			padding: var(--padding-md) var(--padding-lg);
+			font-size: var(--button-font-size-large);
+		}
+
+		&--medium {
+			padding: var(--padding-sm);
+			font-size: var(--button-font-size-small);
+		}
+		&--small {
+			padding: var(--padding-sm);
+			font-size: var(--button-font-size-small);
+		}
+
+		&--ghost {
+			background-color: transparent;
+			border: solid 2px var(--ui-white);
+			color: var(--ui-white);
+
+			&:hover {
+				background-color: var(--ui-white);
+				color: var(--ui-black);
+				border: solid 2px var(--ui-black);
+			}
+		}
+
+		&--secondary {
+			background-color: var(--accent-color);
+			color: var(--ui-white);
+
+			&:hover {
+				background-color: var(--ui-dark-accent);
+			}
+		}
+
+		&.is-disabled {
+			background-color: var(--ui-grey);
+			color: var(--ui-light-grey);
+			pointer-events: none;
+			opacity: 0.6;
+		}
+	}
+</style>

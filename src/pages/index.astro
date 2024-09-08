@@ -19,10 +19,13 @@ import Button from "@/components/shared/Button.astro";
 		title="Tours en la región de Coquimbo"
 		description="Ven a conocer nuestras acitividades en termas, ríos, montaña, parques temáticos con nuestro equipo que está preparado para guiarte."
 	/>
+
+	<Button text="una cosa" classes="Button Button--ghost" url="/" />
+
 	<div class="Container">
 		<CardsContainer>
 			{
-				config.plans.slice(0, 6).map((plan, index) => (
+				config.plans.slice(0, 6).map((plan) => (
 					<PlanCard
 						price={plan.price}
 						title={plan.name}

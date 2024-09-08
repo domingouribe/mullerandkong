@@ -179,11 +179,6 @@ const menu = [
     id: uuidv4(),
   },
   {
-    title: "Nosotros",
-    url: "/about",
-    id: uuidv4(),
-  },
-  {
     title: "Contacto",
     url: "/contact",
     id: uuidv4(),
