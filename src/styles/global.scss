@@ -10,7 +10,6 @@
 
   // Background colors
   --light-surface: #e7d4c6;
-  --dark-surface: #3d364e;
   --dark-surface: var(--gray-800);
 
   // Basic colors
@@ -44,12 +43,13 @@
   --header-color: var(--accent-color);
   --header-color: var(--primary-color);
   --cards-in-light-background: var(--gray-200);
-  --light-theme-background: var(--light-surface);
-  --dark-theme-background: var(--dark-surface);
   --button-font-size-large: var(--size-6);
   --button-font-size-small: var(--size-3);
-
-  color-scheme: light dark;
+  
+  --light-theme-background: var(--light-surface);
+  --dark-theme-background: var(--dark-surface);
+  
+  // color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {

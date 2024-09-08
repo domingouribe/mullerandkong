@@ -1,108 +1,99 @@
 ---
-import Button from "./shared/Button.astro";  
-
+import Button from "./shared/Button.astro";
 ---
 
 <section class="Hero">
-	<div class="Container">
-		<div class="Hero-Container">
-			<h1 class="Hero-Title shadow-titles">Tours en la Región de Coquimbo</h1>
-			<p class="Hero-Description">
-				Cielos estrellados, ballenas y desierto florido.
-			</p>
-			<div class="Hero-Actions">
-				<Button
-					text="Ver todos los tours"
-					url="/tours"
-					classes="Button--ghost Button--large"
-				/>
-				<Button
-					text="Contáctanos"
-					url="/contact"
-					classes="ButtonSecondary Button--large"
-				/>
-			</div>
-		</div>
-	</div>
+  <div class="Container">
+    <div class="Hero-Container">
+      <h1 class="Hero-Title shadow-titles">Tours en la Región de Coquimbo</h1>
+      <p class="Hero-Description">
+        Cielos estrellados, ballenas y desierto florido.
+      </p>
+      <div class="Hero-Actions">
+        <Button
+          text="Ver todos los tours"
+          url="/tours"
+          classes="Button--ghost Button--large"
+        />
+        <Button
+          text="Contáctanos"
+          url="/contact"
+          classes="ButtonSecondary Button--large"
+        />
+      </div>
+    </div>
+  </div>
 </section>
 
 <style lang="scss">
-	.Hero {
-		background-image: linear-gradient(
-				rgba(47, 11, 61, 0),
-				rgba(39, 18, 88, 0.836)
-			),
-			url(/src/assets/hero/RedFlowers.jpg);
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-attachment: scroll;
-		aspect-ratio: 16 / 6;
-		display: flex;
-		align-items: flex-end;
-		justify-content: center;
-		padding-bottom: 4rem;
+  .Hero {
+    background-image: linear-gradient(
+        rgba(47, 11, 61, 0),
+        rgba(39, 18, 88, 0.836)
+      ),
+      url(/src/assets/hero/RedFlowers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    aspect-ratio: 16 / 6;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 4rem;
 
-		&-Container {
-			display: flex;
-			flex-flow: column;
-			justify-content: first baseline;
-		}
+    &-Container {
+      display: flex;
+      flex-flow: column;
+      justify-content: first baseline;
+	  gap: 1rem;
+    }
 
-		&-Title {
-			font-size: clamp(2rem, 5vw, 5rem);
-			line-height: 1;
-			font-weight: 900;
-			margin: 0;
-			color: var(--ui-white);
-		}
+    &-Title {
+      font-size: clamp(1.6rem, 5vw, 5rem);
+      line-height: 1;
+      font-weight: 900;
+      margin: 0;
+      color: var(--ui-white);
+    }
 
-		&-Description {
-			font-size: clamp(1.2rem, 3vw, 2rem);
-			font-weight: 600;
-			line-height: 1.2;
-			margin: 1rem 0;
-			color: var(--ui-white);
-		}
+    &-Description {
+      font-size: clamp(1rem, 3vw, 2rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0;
+      color: var(--ui-white);
+    }
 
-		&-Actions {
-			display: flex;
-			justify-content: start;
-			gap: 1rem;
-			flex-flow: row wrap;
-		}
-	}
+    &-Actions {
+      display: flex;
+      justify-content: start;
+      gap: 1rem;
+      flex-flow: row wrap;
+    }
+  }
 
-	// Media queries para ajustes responsivos
-	@media (max-width: 800px) {
-		:root {
-			--button-padding-large: var(--button-padding-normal);
-			--button-font-size-large: var(--button-font-size-normal);
-		}
+  // Media queries para ajustes responsivos
+  @media (max-width: 800px) {
+    :root {
+      --button-padding-large: var(--button-padding-normal);
+      --button-font-size-large: var(--button-font-size-normal);
+    }
 
-		.Hero {
-			aspect-ratio: 16 / 8;
-			padding-bottom: 2rem;
-		}
-	}
+    .Hero {
+      aspect-ratio: 16 / 8;
+      padding-bottom: 2rem;
+    }
+  }
 
-	@media (max-width: 500px) {
-		:root {
-			--button-padding-large: var(--button-padding-small);
-			--button-font-size-large: var(--button-font-size-small);
-		}
+  @media (max-width: 441px) {
+    .Hero {
+      aspect-ratio: 3 / 2;
+      padding-bottom: 1.5rem;
 
-		.Hero {
-			aspect-ratio: 16 / 10;
-			padding-bottom: 1.5rem;
-
-			&-Actions {
-				flex-direction: column;
-				align-items: stretch;
-
-				.Button {
-					width: 100%;
-				}
-			}
-		}
-	}
+      &-Actions {
+        // flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  }
 </style>
