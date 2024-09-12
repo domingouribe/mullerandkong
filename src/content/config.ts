@@ -1,15 +1,25 @@
+// src/content/config.ts
 import { defineCollection, z } from "astro:content";
 
-const tours = defineCollection({
+const blogCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    description: z.string(),
-    featuredImage: z.string(),
-    price: z.string(),
-    category: z.string().optional(),
-    pubDate: z.coerce.date().optional(),
+    date: z.coerce.date().optional(), // Esto asegura que la fecha se convierta a un objeto Date
+    author: z.string().optional(),
   }),
 });
 
-export const collections = { tours };
+const toursCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    duration: z.string().optional(),
+    price: z.number().optional(),
+  }),
+});
+
+export const collections = {
+  blog: blogCollection,
+  tours: toursCollection,
+};

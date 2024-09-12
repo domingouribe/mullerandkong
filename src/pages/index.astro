@@ -1,11 +1,13 @@
 ---
-import config from "@/data/config";
+import { getCollection } from "astro:content";
+const tours = await getCollection("tours");
+
 import PagesLayout from "@/layouts/PagesLayout.astro";
 import Hero from "@/components/Hero.astro";
 import CardsContainer from "@/components/shared/CardsContainer.astro";
-import PlanCard from "@/components/shared/PlanCard.astro";
 import SectionHeading from "@/components/shared/SectionHeading.astro";
 import Button from "@/components/shared/Button.astro";
+import TourPlanPreview from "@/components/shared/TourPlanPreview.astro";
 ---
 
 <PagesLayout
@@ -23,23 +25,10 @@ import Button from "@/components/shared/Button.astro";
   <div class="Container">
     <CardsContainer>
       {
-        config.plans.slice(0, 6).map((plan) => (
-          <PlanCard
-            price={plan.price}
-            title={plan.name}
-            description={plan.description}
-            classes="Color"
-            tag={plan.tag}
-            features={plan.features}
-            thumbnailCard={plan.featureImage}
-            altThumbnailCard={plan.name}
-          >
-            {
-              <a href={`/tours/${plan.slug}`} class="Button ButtonDefault">
-                Lo quiero!
-              </a>
-            }
-          </PlanCard>
+        tours.map((tour) => (
+          <div class="tour-card">
+            <TourPlanPreview tour={tour} />
+          </div>
         ))
       }
     </CardsContainer>

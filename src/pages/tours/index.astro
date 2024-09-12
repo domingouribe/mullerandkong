@@ -1,40 +1,38 @@
 ---
-import config from "@/data/config";
-import PagesLayout from "@/layouts/PagesLayout.astro";
-import PlanCard from "@/components/shared/PlanCard.astro";
-import CardsContainer from "@/components/shared/CardsContainer.astro";
-import SectionHeading from "@/components/shared/SectionHeading.astro";
+// src/pages/tours/index.astro
+import { getCollection } from "astro:content";
+// import TourPlanPreview from "@/shared/components/TourPlanPreview.astro";
+import TourPlanPreview from "@/components/shared/TourPlanPreview.astro";
+import BaseHead from "@/components/shared/BaseHead.astro";
+import Header from "@/components/shared/Header.astro";
+import Footer from "@/components/shared/Footer.astro";
+
+const tours = await getCollection("tours");
+
+const title = "Tours Disponibles";
+const description = "Descubre nuestros emocionantes tours y aventuras.";
+const image = "/path/to/default/tour/image.jpg"; // Asegúrate de tener una imagen por defecto
 ---
 
-<PagesLayout
-	title="Muller And Kong Travel - Inicio"
-	description="Tours y excursiones en la región de Coquimbo"
-	image="/screenshot.png">
-	<SectionHeading
-		title="Conoce todos nuestros tours"
-		description="Si buscas montaña, ver ballenas, caminar por la rivera de un río..."
-	/>
-	<div class="Container">
-		<CardsContainer>
-			{
-				config.plans.slice(0, 6).map((plan, index) => (
-					<PlanCard
-						price={plan.price}
-						title={plan.name}
-						description={plan.description}
-						classes="Color"
-						tag={plan.tag}
-						features={plan.features}
-						thumbnailCard={plan.featureImage}
-						altThumbnailCard={plan.name}>
-						{
-							<a href={`/tours/${plan.slug}`} class="Button ButtonSecondary">
-								Lo quiero!
-							</a>
-						}
-					</PlanCard>
-				))
-			}
-		</CardsContainer>
-	</div>
-</PagesLayout>
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <BaseHead title={title} description={description} image={image} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>{title}</h1>
+      <div class="tours-grid">
+        {
+          tours.map((tour) => (
+            <div class="tour-card">
+              <TourPlanPreview tour={tour} />
+            </div>
+          ))
+        }
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

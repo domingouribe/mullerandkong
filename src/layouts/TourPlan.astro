@@ -1,0 +1,36 @@
+---
+// src/layouts/BlogPost.astro
+import { type CollectionEntry } from "astro:content";
+import BaseHead from "@/components/shared/BaseHead.astro";
+import Header from "@/components/shared/Header.astro";
+import Footer from "@/components/shared/Footer.astro";
+
+interface Props {
+  entry: CollectionEntry<"blog">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const { title, date, author } = entry.data;
+const description = `Artículo de blog: ${title} por ${author}`;
+const image = "/path/to/default/blog/image.jpg"; // Asegúrate de tener una imagen por defecto o usa una específica del post si la tienes
+---
+
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <BaseHead title={title} description={description} image={image} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <article>
+        <h1>{title}</h1>
+        <p>Por {author} el {date}</p>
+        <Content />
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

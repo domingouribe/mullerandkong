@@ -1,0 +1,35 @@
+---
+import { type CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+---
+
+<article>
+  <h2><a href={`/blog/${post.slug}`}>{post.data.title}</a></h2>
+  <p>Por {post.data.author}</p>
+  <p>Publicado el {post.data.date}</p>
+  <a href={`/blog/${post.slug}`}>Leer más</a>
+</article>
+
+<style>
+  article {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>

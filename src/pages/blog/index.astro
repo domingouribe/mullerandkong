@@ -1,0 +1,38 @@
+---
+// src/pages/blog/index.astro
+import { getCollection } from "astro:content";
+const posts = await getCollection("blog");
+// import BlogPostPreview from "../../components/BlogPostPreview.astro";
+import BlogPostPreview from "@/components/shared/BlogPostPreview.astro";
+import BaseHead from "@/components/shared/BaseHead.astro";
+import Header from "@/components/shared/Header.astro";
+import Footer from "@/components/shared/Footer.astro";
+
+
+const title = "Nuestro Blog";
+const description = "Explora nuestros últimos artículos y noticias.";
+const image = "/path/to/default/blog/image.jpg"; // Asegúrate de tener una imagen por defecto
+---
+
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <BaseHead title={title} description={description} image={image} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>{title}</h1>
+      <div class="blog-grid">
+        {
+          posts.map((post) => (
+            <div class="blog-card">
+              <BlogPostPreview post={post} />
+            </div>
+          ))
+        }
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

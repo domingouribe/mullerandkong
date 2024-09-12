@@ -1,5 +1,5 @@
 @use "normalize.css";
-@use './spacing';
+@use "./spacing";
 
 :root {
   // Typography
@@ -45,10 +45,16 @@
   --cards-in-light-background: var(--gray-200);
   --button-font-size-large: var(--size-6);
   --button-font-size-small: var(--size-3);
-  
+
   --light-theme-background: var(--light-surface);
   --dark-theme-background: var(--dark-surface);
-  
+
+  //Typography
+  --text-display-1: var(--size-4);
+  --text-display-2: var(--size-6);
+  --text-display-3: var(--size-8);
+  --text-display-4: var(--size-10);
+
   // color-scheme: light dark;
 }
 
@@ -128,19 +134,15 @@ main {
 
 // Componente base: Botón
 
-
 @media (max-width: 48rem) {
-
   /* 768px */
   body {
     font-size: 0.9375rem;
     /* 15px */
   }
-
 }
 
 @media (max-width: 25rem) {
-
   /* 400px */
   h2 {
     font-size: 1.2rem;
