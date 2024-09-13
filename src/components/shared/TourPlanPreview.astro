@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry } from "astro:content";
-
+import Button from "./Button.astro";
 interface Props {
   tour: CollectionEntry<"tours">;
 }
@@ -8,28 +8,101 @@ interface Props {
 const { tour } = Astro.props;
 ---
 
-<article>
-  <h2><a href={`/tours/${tour.slug}`}>{tour.data.title}</a></h2>
-  <p>Duración: {tour.data.duration}</p>
-  <p>Precio: ${tour.data.price}</p>
-  <a href={`/tours/${tour.slug}`}>Ver detalles</a>
+<article class="PlanCard">
+  <h3 class="PlanCard-title">
+    <a href={`/tours/${tour.slug}`}>{tour.data.title}</a>
+  </h3>
+  <p class="PlanCard-price">
+    Precio: ${tour.data.price?.toLocaleString("es-CL")}
+  </p>
+
+  <Button
+    text="Ver detalles"
+    classes="ButtonSecondary Button--medium"
+    url=`${tour.slug}`
+  />
 </article>
 
-<style>
-  article {
-    height: 100%;
+<style lang="scss">
+  .PlanCard {
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     justify-content: space-between;
-  }
-  h2 {
-    margin-top: 0;
-  }
-  a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
+    gap: 1em;
+    color: var(--ui-black);
+    background-color: var(--cards-in-light-background);
+    box-shadow: 8px 8px 0 2px rgba(0 0 0 / 20%);
+
+    &-Image {
+      width: 100%;
+      background-color: rgba(128, 128, 128, 0.158);
+      aspect-ratio: 2/1;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    &-tag {
+      background-color: var(--yellow-700);
+      display: flex;
+      width: min-content;
+      color: var(--ui-white);
+      font-size: 0.8rem;
+      padding: 2px 8px;
+    }
+
+    &-header {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+    }
+    &-title {
+      font-size: 1.2rem;
+      line-height: 1.2;
+      font-weight: 800;
+      margin: 0;
+    }
+    &-price {
+      font-size: 1.5rem;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      span {
+        font-size: 0.8rem;
+        font-weight: normal;
+      }
+    }
+    &-features {
+      display: flex;
+      flex-flow: row wrap;
+      padding: 0;
+      list-style: none;
+      font-size: 0.7rem;
+      gap: 0.7em;
+
+      li {
+        // border-bottom: 1px solid var(--ui-dark-background);
+        padding-left: 0.5em;
+        background-color: var(--primary-color);
+        border-radius: var(--border-radius-md);
+        padding-inline: var(--padding-md);
+        padding-block: var(--padding-sm);
+        color: var(--ui-white);
+        font-weight: 500;
+      }
+    }
+
+    &-section {
+      padding: 0 1rem;
+    }
+
+    &-footer {
+      display: flex;
+      flex-flow: column;
+      padding: 1em;
+      gap: 1rem;
+      justify-content: center;
+      align-items: start;
+    }
   }
 </style>
