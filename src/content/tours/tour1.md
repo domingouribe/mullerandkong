@@ -4,8 +4,8 @@ price: 85000
 tags: ["trcking", "navegación"]
 features: ["snack", "protección solar"]
 excerpt: "Será inolvidable"
-thumbnail: "/assets/posts/ballenas.jpg"
+thumbnail: "/screenshot.png"
 thumbnailAlt: "Pasajeros en una lancha disfrutando de una vista de ballenas"
 ---
 
-Descubre los secretos de nuestra hermosa ciudad en este emocionante tour de 3 horas.
+Descubre los secretos de nuestra hermosa ciudad en este emocionante tour de 7 horas.
