@@ -5,7 +5,7 @@ const blogCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    date: z.coerce.date().optional(), // Esto asegura que la fecha se convierta a un objeto Date
+    date: z.coerce.date().optional(),
     author: z.string().optional(),
   }),
 });
@@ -14,8 +14,12 @@ const toursCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    duration: z.string().optional(),
     price: z.number().optional(),
+    tags: z.array(z.string()),
+    features: z.array(z.string()),
+    thumbnail: z.string().optional(),
+    thumbnailAlt: z.string(),
+    excerpt: z.string(),
   }),
 });
 

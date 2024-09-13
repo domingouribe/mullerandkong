@@ -17,6 +17,7 @@ const { url, text, classes } = Astro.props;
     font-size: var(--button-font-size-normal);
     border-radius: var(--border-radius-xl);
     text-decoration: none;
+    text-transform: uppercase;
     transition: all 0.2s ease;
     background-color: var(--secondary-color);
     color: var(--ui-black);
@@ -35,7 +36,7 @@ const { url, text, classes } = Astro.props;
     }
 
     &--medium {
-      padding: var(--padding-sm);
+      padding: var(--padding-sm) var(--padding-md);
       font-size: var(--button-font-size-small);
     }
     &--small {
