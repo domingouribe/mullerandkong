@@ -20,6 +20,8 @@ const toursCollection = defineCollection({
     thumbnail: z.string().optional(),
     thumbnailAlt: z.string(),
     excerpt: z.string(),
+    messageToCancel: z.string(),
+    schedules: z.array(z.string()),
   }),
 });
 

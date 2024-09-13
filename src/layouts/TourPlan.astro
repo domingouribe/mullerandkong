@@ -6,7 +6,7 @@ import Header from "@/components/shared/Header.astro";
 import Footer from "@/components/shared/Footer.astro";
 
 interface Props {
-  entry: CollectionEntry<"blog">;
+	entry: CollectionEntry<"blog">;
 }
 
 const { entry } = Astro.props;
@@ -19,18 +19,20 @@ const image = "/path/to/default/blog/image.jpg"; // Asegúrate de tener una imag
 
 <!doctype html>
 <html lang="es-CL">
-  <head>
-    <BaseHead title={title} description={description} image={image} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <article>
-        <h1>{title}</h1>
-        <p>Por {author} el {date}</p>
-        <Content />
-      </article>
-    </main>
-    <Footer />
-  </body>
+	<head>
+		<BaseHead title={title} description={description} image={image} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="Container">
+				<article class="MdContents">
+					<h1>{title}</h1>
+					<p>Por {author} el {date}</p>
+					<Content />
+				</article>
+			</div>
+		</main>
+		<Footer />
+	</body>
 </html>
