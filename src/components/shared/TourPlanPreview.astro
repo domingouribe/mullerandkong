@@ -2,34 +2,34 @@
 import { type CollectionEntry } from "astro:content";
 
 interface Props {
-  tour: CollectionEntry<"tours">;
+	tour: CollectionEntry<"tours">;
 }
 
 const { tour } = Astro.props;
 ---
 
 <article>
-  <h2><a href={`/tours/${tour.slug}`}>{tour.data.title}</a></h2>
-  <p>Duración: {tour.data.duration}</p>
-  <p>Precio: ${tour.data.price}</p>
-  <a href={`/tours/${tour.slug}`}>Ver detalles</a>
+	<h2><a href={`/tours/${tour.slug}`}>{tour.data.title}</a></h2>
+	<p>Duración: {tour.data.duration}</p>
+	<p>Precio: ${tour.data.price?.toLocaleString("es-CL")}</p>
+	<a href={`/tours/${tour.slug}`}>Ver detalles</a>
 </article>
 
 <style>
-  article {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  h2 {
-    margin-top: 0;
-  }
-  a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
+	article {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	h2 {
+		margin-top: 0;
+	}
+	a {
+		color: #007bff;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
 </style>
