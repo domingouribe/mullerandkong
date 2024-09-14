@@ -31,13 +31,13 @@ const { menu } = config;
 
 			&:hover,
 			.IsActive {
-				background-color: var(--primary-color);
+				background-color: var(--accent-color);
 			}
 		}
 
 		@media screen and (max-width: 800px) {
 			position: absolute;
-			background-color: var(--ui-black);
+			background-color: var(--secondary-color);
 			width: 100vw;
 			left: 0;
 			display: flex;
@@ -53,9 +53,9 @@ const { menu } = config;
 			top: 70px;
 
 			&.isActive {
-				height: 100vh;
+				height: 90vh;
 				pointer-events: unset;
-				top: 0;
+				top: 94px;
 			}
 
 			&-link {
