@@ -1,10 +1,12 @@
 ---
 import data from "@/data/config";
+import { Image } from "astro:assets";
 const { siteInfo } = data;
+import Logo from "@/assets/logo.png";
 ---
 
 <a href="/" class="Brand">
-	<img src={siteInfo.logoUrl} alt={siteInfo.name} />
+	<Image src={Logo} alt={siteInfo.name} width={100} height={100} />
 </a>
 
 <style lang="scss">
