@@ -35,7 +35,7 @@ const { menu } = config;
 			}
 		}
 
-		@media screen and (max-width: 800px) {
+		@media screen and (max-width: 768px) {
 			position: absolute;
 			background-color: var(--secondary-color);
 			width: 100vw;
@@ -60,6 +60,18 @@ const { menu } = config;
 
 			&-link {
 				font-size: 2rem;
+			}
+		}
+
+		@media screen and (max-width: 481px) {
+			&.isActive {
+				height: 90vh;
+				pointer-events: unset;
+				top: 88px;
+			}
+
+			&-link {
+				font-size: 1.2rem;
 			}
 		}
 	}
