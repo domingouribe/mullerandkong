@@ -10,8 +10,6 @@ schedules: ["08:00", "18:00"]
 messageToCancel: "Cancelación Tour hasta 24 horas antes de la salida"
 ---
 
-## Tour Templo Budista
-
 El primer lugar que visitaremos es el embalse Puclaro, que nos regala un bello paisaje junto con interiorizarnos con el propósito para el cual fue construido y la belleza del paisaje que nos regala.
 
 Es un lugar intermedio en la ruta, en el que apreciaremos la que nos entrega distintiva artesanía local. Seguidamente recorreremos el Centro de Estudio y Meditación Budista Mahayana Otzer Ling, ubicado en la localidad de Cochiguaz.

@@ -2,37 +2,22 @@
 // src/pages/blog/index.astro
 import { getCollection } from "astro:content";
 const posts = await getCollection("blog");
-// import BlogPostPreview from "../../components/BlogPostPreview.astro";
+import PagesLayout from "@/layouts/PagesLayout.astro";
 import BlogPostPreview from "@/components/shared/BlogPostPreview.astro";
-import BaseHead from "@/components/shared/BaseHead.astro";
-import Header from "@/components/shared/Header.astro";
-import Footer from "@/components/shared/Footer.astro";
 
+import CardsContainer from "@/components/shared/CardsContainer.astro";
+import SectionHeading from "@/components/shared/SectionHeading.astro";
 
 const title = "Nuestro Blog";
 const description = "Explora nuestros últimos artículos y noticias.";
-const image = "/path/to/default/blog/image.jpg"; // Asegúrate de tener una imagen por defecto
+const image = "/path/to/default/blog/image.jpg";
 ---
 
-<!doctype html>
-<html lang="es-CL">
-  <head>
-    <BaseHead title={title} description={description} image={image} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <h1>{title}</h1>
-      <div class="blog-grid">
-        {
-          posts.map((post) => (
-            <div class="blog-card">
-              <BlogPostPreview post={post} />
-            </div>
-          ))
-        }
-      </div>
-    </main>
-    <Footer />
-  </body>
-</html>
+<PagesLayout title={title} description={description} image={image}>
+	<div class="Container">
+		<SectionHeading title={title} description={description} />
+		<CardsContainer>
+			{posts.map((post) => <BlogPostPreview post={post} />)}
+		</CardsContainer>
+	</div>
+</PagesLayout>

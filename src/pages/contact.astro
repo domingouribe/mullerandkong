@@ -1,20 +1,18 @@
 ---
 import PagesLayout from "@/layouts/PagesLayout.astro";
 import WhatsAppLg from "@/components/social-icons/WhatsAppLg.astro";
+import SectionHeading from "@/components/shared/SectionHeading.astro";
+
+const title = "Contacto";
+const description = "Escríbenos, haz tus consultas y contrata nuestros tours";
 ---
 
 <PagesLayout
-  title="Contacto - Muller And Kong"
-  description="Escríbenos directamente vía WhatsApp y te asesoraremos para elegir el mejor plan"
-  image="/screenshot.png"
->
-  <div class="Container">
-    <h1>Contacto</h1>
-    <p>
-      Escríbenos directamente vía WhatsApp. Solo da click en el ícono de abajo y
-      te orientaremos en todo el proceso:
-    </p>
-
-    <a href="https://wa.me/973897560"> <WhatsAppLg /> </a>
-  </div>
+	title="Contacto - Muller And Kong"
+	description="Escríbenos directamente vía WhatsApp y te asesoraremos para elegir el mejor plan"
+	image="/screenshot.png">
+	<div class="Container">
+		<SectionHeading title={title} description={description} />
+		<a href="https://wa.me/973897560"> <WhatsAppLg /> </a>
+	</div>
 </PagesLayout>

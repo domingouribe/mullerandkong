@@ -1,38 +1,25 @@
 ---
 // src/layouts/BlogPost.astro
 import { type CollectionEntry } from "astro:content";
-import BaseHead from "@/components/shared/BaseHead.astro";
-import Header from "@/components/shared/Header.astro";
-import Footer from "@/components/shared/Footer.astro";
+import PagesLayout from "./PagesLayout.astro";
 
 interface Props {
-	entry: CollectionEntry<"blog">;
+	entry: CollectionEntry<"tours">;
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const { title, date, author } = entry.data;
-const description = `Artículo de blog: ${title} por ${author}`;
-const image = "/path/to/default/blog/image.jpg"; // Asegúrate de tener una imagen por defecto o usa una específica del post si la tienes
+const { title } = entry.data;
+const description = `Artículo de blog: ${title}`;
+const image = "/path/to/default/blog/image.jpg";
 ---
 
-<!doctype html>
-<html lang="es-CL">
-	<head>
-		<BaseHead title={title} description={description} image={image} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<div class="Container">
-				<article class="MdContents">
-					<h1>{title}</h1>
-					<p>Por {author} el {date}</p>
-					<Content />
-				</article>
-			</div>
-		</main>
-		<Footer />
-	</body>
-</html>
+<PagesLayout title={title} description={description} image={image}>
+	<div class="Container">
+		<article class="MdContents">
+			<h1 class="ContentTitle">{title}</h1>
+			<Content />
+		</article>
+	</div>
+</PagesLayout>
