@@ -1,5 +1,8 @@
 ---
-title: "Tour Templo Budista"
+title: "Tour Desierto Fl
+
+
+orido"
 price: 85000
 tags: ["ovalle"]
 features: ["snack", "ticket", "almuerzo", "traslado", "catación"]
@@ -9,8 +12,6 @@ thumbnailAlt: "Pasajeros en una lancha disfrutando de una vista de ballenas"
 schedules: ["08:00", "18:00"]
 messageToCancel: "Cancelación Tour hasta 24 horas antes de la salida"
 ---
-
-## Tour Templo Budista
 
 El primer lugar que visitaremos es el embalse Puclaro, que nos regala un bello paisaje junto con interiorizarnos con el propósito para el cual fue construido y la belleza del paisaje que nos regala.
 

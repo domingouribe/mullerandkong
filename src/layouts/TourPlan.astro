@@ -1,8 +1,8 @@
 ---
 // src/layouts/BlogPost.astro
 import { type CollectionEntry } from "astro:content";
-import PagesLayout from "./PagesLayout.astro";
-
+import SectionHeading from "@/components/shared/SectionHeading.astro";
+import TourDetailLayout from "./TourDetailLayout.astro";
 interface Props {
 	entry: CollectionEntry<"tours">;
 }
@@ -15,11 +15,15 @@ const description = `Artículo de blog: ${title}`;
 const image = "/path/to/default/blog/image.jpg";
 ---
 
-<PagesLayout title={title} description={description} image={image}>
+<TourDetailLayout title={title} description={description} image={image} >
+	<SectionHeading title={title} description={description} />
 	<div class="Container">
 		<article class="MdContents">
 			<h1 class="ContentTitle">{title}</h1>
 			<Content />
 		</article>
+		<aside class="Aside">
+			<h3>Recomendados</h3>
+		</aside>
 	</div>
-</PagesLayout>
+</TourDetailLayout>
