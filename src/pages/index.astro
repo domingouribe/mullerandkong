@@ -11,35 +11,29 @@ import TourPlanPreview from "@/components/shared/TourPlanPreview.astro";
 ---
 
 <PagesLayout
-  title="Muller And Kong Travel - Inicio"
-  description="Tours y excursiones en la región de Coquimbo"
-  image="/screenshot.png"
->
-  <Hero />
+	title="Muller And Kong Travel - Inicio"
+	description="Tours y excursiones en la región de Coquimbo"
+	image="/screenshot.png">
+	<Hero />
 
-  <SectionHeading
-    title="Tours en la región de Coquimbo"
-    description="Ven a conocer nuestras acitividades en termas, ríos, montaña, parques temáticos con nuestro equipo que está preparado para guiarte."
-  />
+	<SectionHeading
+		title="Tours en la región de Coquimbo"
+		description="Ven a conocer nuestras acitividades en termas, ríos, montaña, parques temáticos con nuestro equipo que está preparado para guiarte."
+	/>
 
-  <div class="Container">
-    <CardsContainer>
-      {
-        tours.map((tour) => (
-            <TourPlanPreview tour={tour} />
-        ))
-      }
-    </CardsContainer>
+	<div class="Container">
+		<CardsContainer>
+			{tours.map((tour) => <TourPlanPreview tour={tour} />)}
+		</CardsContainer>
 
-    <SectionHeading
-      title="¡Ven a conocer todos nuestros tourss!"
-      description="Conoce todos nuestros tours en la región de Coquimbo"
-    >
-      <Button
-        text="Ver todos los planes"
-        url="/tours"
-        classes="Button ButtonSecondary Button--medium"
-      />
-    </SectionHeading>
-  </div>
+		<SectionHeading
+			title="¡Ven a conocer todos nuestros tours!"
+			description="Conoce todos nuestros tours en la región de Coquimbo">
+			<Button
+				text="Ver todos los planes"
+				url="/tours"
+				classes="Button ButtonSecondary Button--medium"
+			/>
+		</SectionHeading>
+	</div>
 </PagesLayout>
