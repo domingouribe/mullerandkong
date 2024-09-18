@@ -43,7 +43,7 @@
   --header-color: var(--accent-color);
   --header-color: var(--primary-color);
   --cards-in-light-background: var(--gray-200);
-  --button-font-size-large: var(--size-6);
+  --button-font-size-large: var(--size-4);
   --button-font-size-small: var(--size-3);
 
   --light-theme-background: var(--light-surface);
@@ -108,7 +108,7 @@ body {
 
 main {
   flex: 1;
-  padding-bottom: var(--size-12);
+  padding: var(--size-2) var(--size-4);
   /* 48px */
 }
 

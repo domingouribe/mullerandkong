@@ -1,17 +1,21 @@
 ---
-// src/pages/tours/[slug].astro
 import { getCollection } from "astro:content";
 import TourPlan from "@/layouts/TourPlan.astro";
+import TourDetailLayout from "@/layouts/TourDetailLayout.astro";
 
 export async function getStaticPaths() {
-  const tours = await getCollection("tours");
-  return tours.map((tour) => ({
-    params: { slug: tour.slug },
-    props: { tour },
-  }));
+	const tours = await getCollection("tours");
+	return tours.map((tour) => ({
+		params: { slug: tour.slug },
+		props: { tour },
+	}));
 }
 
 const { tour } = Astro.props;
 ---
 
-<TourPlan entry={tour} />
+<TourDetailLayout
+	title={tour.data.title}
+	description={tour.data.excerpt}}>
+	<TourPlan entry={tour} />
+</TourDetailLayout>
